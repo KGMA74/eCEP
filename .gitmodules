@@ -1,0 +1,7 @@
+[submodule "ecep_api"]
+    path = ecep_api
+    url = https://github.com/KGMA74/ecep_api.git
+
+[submodule "ecep_frontend"]
+    path = ecep_frontend
+    url = https://github.com/KGMA74/ecep_frontend.git
