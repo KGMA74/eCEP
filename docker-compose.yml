@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  backend:
+    image: ecep_backend
+    build:
+      context: ./ecep_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ecep_api:/backend
+      - ./ecep_api/media:/media
+    # depends_on:
+    #   - db
+    env_file:
+      - .env
+    networks:
+      - ecep_network
+      
+    # en developpement
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
+    
+
+
+  frontend:
+    image: ecep_frontend
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./ecep_frontend:/frontend
+    depends_on:
+      - backend
+    networks:
+      - ecep_network
+
+  # redis:
+  #   image: redis:alpine
+  #   command: ["redis-server", "--save", "900", "1", "--loglevel", "warning"]
+  #   networks:
+  #     - ecep_network
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx-setup.conf:/etc/nginx/nginx.conf:ro
+      # - ./nginx/cert.pem:/etc/nginx/cert.pem
+      # - ./nginx/key.pem:/etc/nginx/key.pem
+      - ./ecep_api/media:/media
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - ecep_network
+
+  # db:
+  #   image: postgres:latest
+  #   container_name: ecep_db
+  #   volumes:
+  #     - pg_data:/var/lib/postgresql/data:rw
+  #   env_file:
+  #     - .env
+  #   networks:
+  #     - ecep_network
+
+# volumes:
+#   pg_data:
+
+networks:
+  ecep_network:
+    driver: bridge
