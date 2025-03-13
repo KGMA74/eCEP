@@ -26,7 +26,7 @@ services:
   frontend:
     image: ecep_frontend
     build:
-      context: ./frontend
+      context: ./ecep_frontend
     ports:
       - "3000:3000"
     env_file:
