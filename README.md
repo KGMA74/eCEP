@@ -4,41 +4,6 @@ ___
 
 # eCEP
 
-## English
-
-### Commands to run:
-
-```sh
-git clone https://github.com/KGMA74/eCEP.git
-git submodule init
-git submodule update
-```
-
-### Configuration
-
-The `.env` file represents the global configuration file. In it, you'll find the `DOMAIN` variable, which should be replaced by the IP address (e.g., 192.168.x.x) if you are on a local network, or the public domain name (e.g., domain.com) if you are on the internet.
-
-The website will be available at the URL specified in the `DOMAIN` variable in the `.env` file.
-
-### Prerequisites
-
-- Docker
-- Docker Compose
-
-### Build
-
-To build the project for the first time:
-
-```sh
-docker-compose build --up
-```
-
-For subsequent runs:
-
-```sh
-docker-compose up
-```
-
 ## Français
 
 ### Commandes à exécuter :
@@ -74,7 +39,51 @@ Pour les exécutions suivantes :
 docker-compose up
 ```
 
+### TEST
+pour les test on a les utilisateurs suivants
+  - admin@gmail.com/7488
+  - teacher@gmail.com/7488
+  - student@gmail.com/7488
+  - parent@gmail.com/7488
+  ce pendant vous pourez naturellement en creer d'autre mais avec de vrai addresse mail car un lien dactivaiton est envoye par mail
+
 ``` MEMBRE DU GROUPE
 KARAMBIRI ARNOLD
 KAMBOU ARMMEL
+```
+
+## English
+
+### Commands to run:
+
+```sh
+git clone https://github.com/KGMA74/eCEP.git
+git submodule init
+git submodule update
+```
+
+### Configuration
+
+The `.env` file represents the global configuration file. In it, you'll find the `DOMAIN` variable, which should be replaced by the IP address (e.g., 192.168.x.x) if you are on a local network, or the public domain name (e.g., domain.com) if you are on the internet.
+
+The website will be available at the URL specified in the `DOMAIN` variable in the `.env` file.
+
+
+### Prerequisites
+
+- Docker
+- Docker Compose
+
+### Build
+
+To build the project for the first time:
+
+```sh
+docker-compose build --up
+```
+
+For subsequent runs:
+
+```sh
+docker-compose up
 ```
