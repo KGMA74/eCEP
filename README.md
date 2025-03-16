@@ -45,7 +45,8 @@ pour les test on a les utilisateurs suivants
   - teacher@gmail.com/7488
   - student@gmail.com/7488
   - parent@gmail.com/7488
-  ce pendant vous pourez naturellement en creer d'autre mais avec de vrai addresse mail car un lien dactivaiton est envoye par mail
+    
+ce pendant vous pourez naturellement en creer d'autre mais avec de vrai addresse mail car un lien dactivaiton est envoye par mail
 
 ``` MEMBRE DU GROUPE
 KARAMBIRI ARNOLD
